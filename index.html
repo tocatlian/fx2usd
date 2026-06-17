@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'none'; connect-src 'self' https://open.er-api.com; form-action 'none'; img-src 'self'; manifest-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'; worker-src 'self'"
+    />
+    <meta
+      name="description"
+      content="Convert foreign currency amounts to USD with live exchange rates, manual overrides, cached rates, and banknote references."
+    />
+    <meta name="application-name" content="FX to USD Converter" />
+    <meta name="theme-color" content="#1a7f6e" />
+    <meta name="color-scheme" content="light" />
+    <meta property="og:title" content="FX to USD Converter" />
+    <meta
+      property="og:description"
+      content="A privacy-friendly browser app for converting foreign currency amounts to USD."
+    />
+    <meta property="og:type" content="website" />
+    <title>FX to USD Converter</title>
+    <!-- SPDX-License-Identifier: MIT -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div>
+            <p class="brand-title">FX to USD</p>
+          </div>
+        </div>
+        <div class="currency-picker">
+          <label for="currencySelect">From currency</label>
+          <select id="currencySelect" aria-describedby="currencyHint">
+            <option value="">Select a currency</option>
+          </select>
+          <p id="currencyHint" class="hint"></p>
+          <div class="custom-currency toggle-panel">
+            <details id="customPanel">
+              <summary>
+                <span class="field-label">Add custom currency</span>
+              </summary>
+              <div class="custom-row">
+                <input
+                  id="customCode"
+                  type="text"
+                  inputmode="text"
+                  maxlength="3"
+                  placeholder="Code (e.g., VND)"
+                  aria-label="Custom currency code"
+                  aria-describedby="customError"
+                />
+                <input
+                  id="customName"
+                  type="text"
+                  placeholder="Name (e.g., Vietnamese Dong)"
+                  aria-label="Custom currency name"
+                  aria-describedby="customError"
+                />
+                <input
+                  id="customSymbol"
+                  type="text"
+                  maxlength="6"
+                  placeholder="Symbol (optional)"
+                  aria-label="Custom currency symbol"
+                  aria-describedby="customError"
+                />
+                <button id="addCustomBtn" class="ghost" type="button">Add</button>
+              </div>
+              <p id="customError" class="error" role="alert"></p>
+            </details>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="card">
+          <div class="section-header">
+            <h1>Convert to USD</h1>
+          </div>
+
+          <div class="controls">
+            <div class="field">
+              <label id="amountLabel" for="amountInput">Amount in currency</label>
+              <input
+                id="amountInput"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+                placeholder="0"
+                aria-describedby="amountHint amountError"
+              />
+              <p id="amountHint" class="hint"></p>
+              <p id="amountError" class="error" role="alert"></p>
+            </div>
+
+            <div class="actions">
+              <button id="convertBtn" class="primary" type="button">Convert</button>
+              <button id="retryBtn" class="ghost" type="button" hidden>Retry rate</button>
+            </div>
+            <p id="statusMessage" class="status" role="status"></p>
+          </div>
+
+          <div class="advanced">
+            <div id="manualPanel" class="panel-toggle">
+              <div class="panel-toggle-row">
+                <span class="field-label">Manual rate</span>
+                <button
+                  id="manualToggleBtn"
+                  class="panel-toggle-btn"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="manualPanelContent"
+                  aria-label="Toggle manual rate"
+                >
+                  +
+                </button>
+              </div>
+              <div id="manualPanelContent" class="manual-panel" hidden>
+                <p id="manualPanelHint" class="hint">
+                  Uses live rate by default. Enter a manual rate to override it.
+                </p>
+                <div class="field">
+                  <label for="manualRate"
+                    >Manual rate (1 <span id="manualCode">XXX</span> = ? USD)</label
+                  >
+                  <input
+                    id="manualRate"
+                    type="text"
+                    inputmode="decimal"
+                    autocomplete="off"
+                    placeholder="0.1280"
+                    aria-describedby="manualPanelHint manualRateError"
+                  />
+                  <p id="manualRateError" class="error" role="alert"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card results" aria-live="polite" aria-atomic="true">
+          <div class="results-header">
+            <h2>Result</h2>
+          </div>
+          <p class="result-amount" id="usdOutput">USD --</p>
+        </section>
+
+        <section class="card bills">
+          <details id="billsPanel">
+            <summary>
+              <h2>Banknotes</h2>
+            </summary>
+            <p id="billsMessage" class="bills-message"></p>
+            <ul id="billsList" class="bills-list"></ul>
+          </details>
+        </section>
+
+        <section class="card history">
+          <details id="historyPanel">
+            <summary>
+              <h2>History</h2>
+            </summary>
+            <ul id="historyList" class="history-list"></ul>
+            <div class="history-actions">
+              <button id="clearHistoryBtn" class="ghost" type="button">Clear history</button>
+            </div>
+          </details>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Copyright © 2026 Paul Tocatlian. Released under the MIT License.</p>
+        <p class="attribution">
+          Rates by
+          <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer"
+            >ExchangeRate-API</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

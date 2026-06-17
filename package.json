@@ -1,0 +1,42 @@
+{
+  "name": "fx2usd",
+  "version": "0.1.0",
+  "description": "A static browser app for converting foreign currency amounts to USD with live, cached, and manual exchange rates.",
+  "private": true,
+  "license": "MIT",
+  "author": "Paul Tocatlian",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "check": "npm run format:check && npm run lint && npm run validate && npm test && npm run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:html": "html-validate index.html",
+    "lint:js": "eslint .",
+    "serve": "node scripts/serve.js",
+    "start": "npm run serve",
+    "test": "node --test tests/*.test.js",
+    "validate": "node scripts/validate-project.js"
+  },
+  "keywords": [
+    "currency",
+    "exchange-rates",
+    "foreign-exchange",
+    "offline",
+    "pwa",
+    "usd"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "html-validate": "^11.5.3",
+    "prettier": "^3.8.4",
+    "stylelint": "^17.13.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}

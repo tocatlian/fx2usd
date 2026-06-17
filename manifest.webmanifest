@@ -1,0 +1,44 @@
+{
+  "name": "FX to USD Converter",
+  "short_name": "FX2USD",
+  "description": "Convert foreign currency amounts to USD with live and cached exchange rates.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f2ee",
+  "theme_color": "#1a7f6e",
+  "categories": ["finance", "utilities"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "docs/screenshot.jpg",
+      "sizes": "1265x1048",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "FX to USD Converter with a manual EUR conversion"
+    }
+  ]
+}
