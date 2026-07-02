@@ -8,6 +8,7 @@ coverage/
 # Build and distribution output
 dist/
 build/
+out/
 
 # Logs
 *.log
@@ -16,10 +17,41 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Cache and temporary files
+.cache/
+.parcel-cache/
+.vite/
+.eslintcache
+.stylelintcache
+tmp/
+temp/
+
 # Environment and local configuration
 .env
 .env.*
 !.env.example
+*.local
+
+# Credentials and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# Local data, dumps, and backup archives
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.sql
+*.bak
+*.backup
+*.zip
+*.tar
+*.tgz
+*.gz
 
 # Operating system and editor files
 .DS_Store
