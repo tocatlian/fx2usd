@@ -18,6 +18,8 @@
     "lint:css": "stylelint \"**/*.css\"",
     "lint:html": "html-validate index.html",
     "lint:js": "eslint .",
+    "maintenance:dry-run": "node scripts/local-maintenance.js --dry-run",
+    "maintenance:run": "node scripts/local-maintenance.js --run",
     "serve": "node scripts/serve.js",
     "start": "npm run serve",
     "test": "node --test tests/*.test.js",

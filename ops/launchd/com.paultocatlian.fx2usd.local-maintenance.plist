@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.paultocatlian.fx2usd.local-maintenance</string>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/paultocatlian/Documents/PaulTocatlian/projects/AI/codex/spa/fx2usd</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/fnm</string>
+    <string>exec</string>
+    <string>--using</string>
+    <string>default</string>
+    <string>npm</string>
+    <string>run</string>
+    <string>maintenance:run</string>
+  </array>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>FX2USD_MAINTENANCE_REQUIRE_DEPLOY</key>
+    <string>1</string>
+    <key>FX2USD_MAINTENANCE_DEPLOY_COMMAND</key>
+    <string></string>
+  </dict>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>13</integer>
+    <key>Minute</key>
+    <integer>30</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/paultocatlian/Library/Logs/fx2usd-maintenance/launchd.out.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/paultocatlian/Library/Logs/fx2usd-maintenance/launchd.err.log</string>
+</dict>
+</plist>
