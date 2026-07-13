@@ -1,34 +1,27 @@
-# Publishing
+# Publishing and Releases
 
-Use this checklist when publishing FX to USD Converter as a public GitHub project.
+This repository is already public and deploys through GitHub Pages. Use the protected branch workflow in [CONTRIBUTING.md](CONTRIBUTING.md) for changes; do not initialize or push a replacement repository from a local checkout.
 
-## First Publish
+## Repository Settings
 
-```bash
-git init -b main
-git add .
-git commit -m "Prepare public GitHub release"
-gh repo create fx2usd --public --source=. --remote=origin --push
-```
+- Keep GitHub Pages configured to use GitHub Actions.
+- Keep the repository description and topics aligned with the project.
+- Enable private vulnerability reporting when the repository setting is available.
 
-Then in GitHub:
+The Pages workflow at `.github/workflows/pages.yml` runs on pushes to `main`. It installs the locked dependencies with `npm ci`, runs `npm run check`, builds `dist/`, and deploys that directory.
 
-- Add a short repository description: `Static FX to USD converter with live, cached, manual, and offline support.`
-- Add topics: `currency`, `exchange-rates`, `pwa`, `offline`, `javascript`.
-- Enable GitHub Pages with `GitHub Actions` as the source.
-- Enable private vulnerability reporting if it is available.
+## Release Checklist
 
-## Before Each Release
+1. Create a focused `codex/<description>` branch from the latest `main`.
+2. If the version changes, update `package.json` and `APP_VERSION` in `sw.js` together.
+3. Update [CHANGELOG.md](CHANGELOG.md) and any affected README, privacy, or support documentation.
+4. Run `npm ci` and `npm run check`.
+5. Open a pull request, wait for the required CI checks, and squash-merge it.
+6. From the updated local `main`, create and push an annotated version tag:
 
-```bash
-npm run check
-```
+   ```bash
+   git tag -a vX.Y.Z -m "Release vX.Y.Z"
+   git push origin vX.Y.Z
+   ```
 
-If the version changes, update both `package.json` and `APP_VERSION` in `sw.js`. The project validator will fail if they drift apart.
-
-Create a release tag:
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
+7. Create the GitHub Release from the pushed tag and summarize the changes from [CHANGELOG.md](CHANGELOG.md).
