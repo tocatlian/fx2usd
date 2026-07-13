@@ -1,8 +1,14 @@
 # FX to USD Converter
 
+[![CI](https://github.com/tocatlian/fx2usd/actions/workflows/ci.yml/badge.svg)](https://github.com/tocatlian/fx2usd/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Node.js 20+](https://img.shields.io/badge/node.js-20%2B-339933.svg?logo=node.js&logoColor=white)](package.json)
+
 FX to USD Converter is a small, installable browser app for converting foreign currency amounts to US dollars. It fetches live exchange rates, keeps a local cache for offline fallback, supports manual rate overrides, and shows USD equivalents for common banknotes.
 
 The app is intentionally static: no backend, no build step, and no account required.
+
+Live demo: [tocatlian.github.io/fx2usd](https://tocatlian.github.io/fx2usd/)
 
 ![FX to USD Converter screenshot](docs/screenshot.jpg)
 
@@ -38,10 +44,10 @@ The browser app itself does not require Node.js after it is deployed.
 
 ## Development
 
-Install dependencies:
+Install the locked dependency set:
 
 ```bash
-npm install
+npm ci
 ```
 
 Run tests:
@@ -74,14 +80,13 @@ The test suite uses Node's built-in test runner and a small fake DOM harness. Th
 
 ```text
 .
-â”œâ”€â”€ .github/              # GitHub templates, CI, Dependabot, and Pages deployment
-â”œâ”€â”€ docs/                 # Repository images and supporting documentation assets
-â”œâ”€â”€ scripts/              # Local development, build, and validation helpers
-â”œâ”€â”€ tests/                # Node regression tests
-â”œâ”€â”€ app.js                # Browser application logic
-â”œâ”€â”€ index.html            # Static application shell
-â”œâ”€â”€ manifest.webmanifest  # PWA manifest
-â””â”€â”€ styles.css            # Application styles
+éİyø§yÛ§uçâç@ºw^~)Şt .github/              # GitHub templates, CI, Dependabot, and Pages deployment
+ºw^~)Şvéİyø§yÛ§uçâç@ docs/                 # Repository images and supporting documentation assets
+éİyø§yÛ§uçâç@ºw^~)Şt scripts/              # Local development, build, and validation helpers
+ºw^~)Şvéİyø§yÛ§uçâç@ tests/                # Node regression tests§uçâç\ºw^~)Şvéİyø§yĞ app.js                # Browser application logic§uçâç\ºw^~)Şvéİyø§yĞ index.html            # Static application shell
+éİyø§yÛ§uçâç@ºw^~)Şt manifest.webmanifest  # PWA manifest
+ºw^~)Şvéİyø§yÛ§uçâç@ sw.js                 # Service worker for offline loading
+ºw^~)Şvéİyø§yÛ§uçâç@ styles.css            # Application styles
 ```
 
 ## Deployment
