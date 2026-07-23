@@ -1,6 +1,7 @@
 build/
 coverage/
 dist/
+docs/html/
 node_modules/
 *.png
 *.plist

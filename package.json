@@ -23,7 +23,12 @@
     "serve": "node scripts/serve.js",
     "start": "npm run serve",
     "test": "node --test tests/*.test.js",
-    "validate": "node scripts/validate-project.js"
+    "validate": "node scripts/validate-project.js",
+    "docs:html": "node scripts/render-doc-html.mjs --portal",
+    "docs:html:watch": "node scripts/render-doc-html.mjs --portal --watch",
+    "docs:html:check": "node scripts/render-doc-html.mjs --portal --check",
+    "docs:build": "npm run docs:html",
+    "docs:watch": "npm run docs:html:watch"
   },
   "keywords": [
     "currency",

@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Generated from README.md. Do not edit directly. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>FX to USD Converter</title><style>:root{color-scheme:light;--bg:#eef2f5;--paper:#fff;--ink:#24292f;--muted:#5d6673;--line:#d6dde5;--soft:#f5f8fa;--accent:#0f766e;--accent-dark:#134e4a;--code:#edf4f3}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.62}.page{width:min(1120px,calc(100% - 32px));margin:32px auto;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 18px 45px rgba(20,35,48,.08);overflow:hidden}header{padding:42px clamp(24px,5vw,72px) 30px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff 0%,#f7fafb 100%)}.source-note{display:inline-flex;flex-wrap:wrap;gap:.35rem;align-items:baseline;margin:0 0 20px;padding:8px 11px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--muted);font-size:.88rem}.source-note code{color:var(--accent-dark)}h1{margin:0;color:var(--accent-dark);font-size:clamp(2rem,4vw,3.2rem);line-height:1.15}header p{max-width:760px;color:var(--muted);margin:12px 0 0}main{display:grid;grid-template-columns:260px minmax(0,1fr);gap:42px;padding:34px clamp(24px,5vw,72px) 64px}.toc{align-self:start;position:sticky;top:24px;padding:18px;background:var(--soft);border:1px solid var(--line);border-radius:8px}.toc h2{margin:0 0 10px;font-size:.95rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-dark);border:0;padding:0}.toc ol{margin:0;padding-left:1.2rem}.toc li{margin:.35rem 0}.toc-level-3{margin-left:.9rem}.toc a{color:var(--accent-dark);text-decoration:none}.toc a:hover{text-decoration:underline}article{min-width:0}h2,h3,h4,h5,h6{color:var(--accent-dark);line-height:1.2}h2{margin:3rem 0 1rem;padding-bottom:.45rem;border-bottom:1px solid var(--line);font-size:clamp(1.55rem,2.4vw,2.25rem)}h3{margin:2rem 0 .85rem;font-size:1.25rem}p{margin:0 0 1.05rem}ul,ol{padding-left:1.45rem;margin:0 0 1.25rem}li{margin:.38rem 0}a{color:var(--accent);text-decoration-thickness:.08em;text-underline-offset:.16em}code{background:var(--code);padding:.1em .32em;border-radius:4px;font-family:"SFMono-Regular",Consolas,monospace;font-size:.92em}pre{overflow-x:auto;margin:1.2rem 0 1.6rem;padding:16px;border:1px solid var(--line);border-radius:8px;background:#172126;color:#edf6f5;line-height:1.5}pre code{background:transparent;color:inherit;padding:0;border-radius:0;font-size:.9rem}img{display:block;width:100%;max-width:920px;height:auto;margin:1.2rem 0 1.6rem;border:1px solid var(--line);border-radius:8px}.table-wrap{overflow-x:auto;margin:1.2rem 0 1.8rem;border:1px solid var(--line);border-radius:8px}table{width:100%;min-width:720px;border-collapse:collapse;font-size:.95rem}th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--soft);color:var(--accent-dark);font-weight:700}tr:last-child td{border-bottom:0}footer{padding:22px clamp(24px,5vw,72px);border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;background:#f7fafb}@media(max-width:860px){.page{width:100%;margin:0;border-left:0;border-right:0}main{display:block;padding-top:24px}.toc{position:static;margin-bottom:26px}table{min-width:640px}}</style></head><body><div class="page"><header><div class="source-note"><strong>Source of truth:</strong> <code>README.md</code></div><h1>FX to USD Converter</h1><p>This HTML file is generated from Markdown. Edit the Markdown source, then regenerate this file.</p></header><main><nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li class="toc-level-2"><a href="#features">Features</a></li><li class="toc-level-2"><a href="#quick-start">Quick Start</a></li><li class="toc-level-2"><a href="#requirements">Requirements</a></li><li class="toc-level-2"><a href="#development">Development</a></li><li class="toc-level-2"><a href="#project-structure">Project Structure</a></li><li class="toc-level-2"><a href="#deployment">Deployment</a></li><li class="toc-level-2"><a href="#data-and-privacy">Data and Privacy</a></li><li class="toc-level-2"><a href="#rate-source">Rate Source</a></li><li class="toc-level-2"><a href="#contributing">Contributing</a></li><li class="toc-level-2"><a href="#security">Security</a></li><li class="toc-level-2"><a href="#license">License</a></li></ol></nav><article><p><a href="https://github.com/tocatlian/fx2usd/actions/workflows/ci.yml">@@IMAGE0@@</a> <a href="../../LICENSE">@@IMAGE1@@</a> <a href="../../package.json">@@IMAGE2@@</a></p>
+<p>FX to USD Converter is a small, installable browser app for converting foreign currency amounts to US dollars. It fetches live exchange rates, keeps a local cache for offline fallback, supports manual rate overrides, and shows USD equivalents for common banknotes.</p>
+<p>The app is intentionally static: it has no backend or account requirement. Local use does not require a build step; <code>npm run build</code> prepares the deployment directory.</p>
+<p>Live demo: <a href="https://tocatlian.github.io/fx2usd/">tocatlian.github.io/fx2usd</a></p>
+<p><img src="../screenshot.jpg" alt="FX to USD Converter screenshot" loading="lazy"></p>
+<h2 id="features">Features</h2>
+<ul><li>Convert supported foreign currencies to USD with live ExchangeRate-API data.</li><li>Use cached exchange rates when live rates are unavailable.</li><li>Enter a manual rate when a real counter, receipt, or market quote differs from the live rate.</li><li>Add custom three-letter currency codes that persist in browser storage.</li><li>View banknote denomination references for supported currencies.</li><li>Track recent rate changes in local history.</li><li>Install as a lightweight progressive web app through the browser.</li><li>Load the app shell offline after the first served visit.</li></ul>
+<h2 id="quick-start">Quick Start</h2>
+<p>Open <code>index.html</code> directly in a browser for a quick look, or run a local server:</p>
+<pre><code class="language-bash">npm start</code></pre>
+<p>Then visit <code>http://localhost:8000</code>.</p>
+<p>The offline app shell uses a service worker, so it is available when the app is served from <code>localhost</code>, <code>127.0.0.1</code>, or HTTPS.</p>
+<h2 id="requirements">Requirements</h2>
+<ul><li>Node.js 20 or newer for project scripts and tests.</li><li>A modern browser with <code>localStorage</code>, <code>fetch</code>, and <code>Intl</code> support.</li></ul>
+<p>The browser app itself does not require Node.js after it is deployed.</p>
+<h2 id="development">Development</h2>
+<p>Install the locked dependency set:</p>
+<pre><code class="language-bash">npm ci</code></pre>
+<p>Run tests:</p>
+<pre><code class="language-bash">npm test</code></pre>
+<p>Run the full local quality gate:</p>
+<pre><code class="language-bash">npm run check</code></pre>
+<p>Serve locally:</p>
+<pre><code class="language-bash">npm run serve</code></pre>
+<p>Build the static deployment output:</p>
+<pre><code class="language-bash">npm run build</code></pre>
+<p>The test suite uses Node's built-in test runner and a small fake DOM harness. The full check also runs formatting, JavaScript linting, CSS linting, HTML validation, project metadata validation, tests, and the static deployment build.</p>
+<p>For scheduled local maintenance tasks, see <a href="docs/local-maintenance.html">docs/local-maintenance.md</a>.</p>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code class="language-text">.
+|-- .github/              # GitHub templates, CI, Dependabot, and Pages deployment
+|-- docs/                 # Repository images and supporting documentation assets
+|-- scripts/              # Local development, build, and validation helpers
+|-- tests/                # Node regression tests
+|-- app.js                # Browser application logic
+|-- index.html            # Static application shell
+|-- manifest.webmanifest  # PWA manifest
+|-- sw.js                 # Service worker for offline loading
+`-- styles.css            # Application styles</code></pre>
+<h2 id="deployment">Deployment</h2>
+<p>This project includes a GitHub Pages workflow at <code>.github/workflows/pages.yml</code>. GitHub Actions runs <code>npm ci</code>, the quality gate, and <code>npm run build</code>, then deploys <code>dist/</code> whenever changes merge to <code>main</code>.</p>
+<p>See <a href="PUBLISHING.html">PUBLISHING.md</a> for the repository settings and release checklist.</p>
+<p>For other static hosts, deploy the files generated by:</p>
+<pre><code class="language-bash">npm run build</code></pre>
+<h2 id="data-and-privacy">Data and Privacy</h2>
+<p>The app stores selected currency, custom currencies, cached rates, and rate history in the user's browser <code>localStorage</code>. It does not send this saved data to a project-owned server. The service worker caches same-origin app files for offline loading, while live rates are fetched from ExchangeRate-API. See <a href="PRIVACY.html">PRIVACY.md</a> for details.</p>
+<h2 id="rate-source">Rate Source</h2>
+<p>Live rates are fetched from the open ExchangeRate-API endpoint at <code>https://open.er-api.com</code>. No API key is required by this project.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome. Please read <a href="CONTRIBUTING.html">CONTRIBUTING.md</a>, follow the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a>, and run <code>npm run check</code> before opening a pull request. Release history is tracked in <a href="CHANGELOG.html">CHANGELOG.md</a>.</p>
+<h2 id="security">Security</h2>
+<p>Please report suspected vulnerabilities privately. See <a href="SECURITY.html">SECURITY.md</a>.</p>
+<h2 id="license">License</h2>
+<p>Released under the <a href="../../LICENSE">MIT License</a>.</p></article></main><footer>Generated from <code>README.md</code>. Output file: <code>docs/html/README.html</code>.</footer></div></body></html>
