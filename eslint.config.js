@@ -37,7 +37,7 @@ module.exports = [
   },
   js.configs.recommended,
   {
-    files: ["**/*.js"],
+    files: ["**/*.{js,mjs}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "script",
@@ -65,7 +65,7 @@ module.exports = [
     },
   },
   {
-    files: ["eslint.config.js", "scripts/**/*.js", "tests/**/*.js"],
+    files: ["eslint.config.js", "scripts/**/*.{js,mjs}", "tests/**/*.js"],
     languageOptions: {
       globals: {
         ...nodeGlobals,
@@ -74,6 +74,12 @@ module.exports = [
         globalThis: "readonly",
         setTimeout: "readonly",
       },
+    },
+  },
+  {
+    files: ["scripts/**/*.mjs"],
+    languageOptions: {
+      sourceType: "module",
     },
   },
 ];
