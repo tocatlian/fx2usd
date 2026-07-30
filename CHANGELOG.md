@@ -6,5 +6,6 @@ This project follows the spirit of [Keep a Changelog](https://keepachangelog.com
 
 ## [Unreleased]
 
+- Added canonical, robots, Open Graph, and Twitter metadata for the canonical tocatlian.com app URL.
 - Prepared the project for public GitHub release with license, contribution, security, privacy, CI, and package metadata.
 - Added PWA offline app-shell caching, static build validation, GitHub Pages deployment, and service-worker regression tests.
