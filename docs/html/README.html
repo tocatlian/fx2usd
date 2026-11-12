@@ -13,7 +13,7 @@
 <p>Then visit <code>http://localhost:8000</code>.</p>
 <p>The offline app shell uses a service worker, so it is available when the app is served from <code>localhost</code>, <code>127.0.0.1</code>, or HTTPS.</p>
 <h2 id="requirements">Requirements</h2>
-<ul><li>Node.js 20 or newer for project scripts and tests.</li><li>A modern browser with <code>localStorage</code>, <code>fetch</code>, and <code>Intl</code> support.</li></ul>
+<ul><li>Use the Node.js version pinned in <a href="../../.node-version"><code>.node-version</code></a> for local development. It follows the Node.js 24 LTS line used by GitHub Pages. With fnm, run <code>fnm install</code> and <code>fnm use</code> from the project directory.</li><li>The development tools require Node.js 22.22 or newer on the 22 line, or Node.js 24.8 or newer. CI checks the Node.js 22 and 24 lines.</li><li>A modern browser with <code>localStorage</code>, <code>fetch</code>, and <code>Intl</code> support.</li></ul>
 <p>The browser app itself does not require Node.js after it is deployed.</p>
 <h2 id="development">Development</h2>
 <p>Install the locked dependency set:</p>
