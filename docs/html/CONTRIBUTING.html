@@ -10,6 +10,7 @@
 npm run check
 npm run serve</code></pre>
 <p>Local use does not require a build step; run <code>npm run build</code> when you need to inspect the deployment output. For scheduled local maintenance, see <a href="docs/local-maintenance.html">docs/local-maintenance.md</a>.</p>
+<p>The npm override for <code>minimatch</code> in ESLint's dependency tree addresses <a href="https://github.com/advisories/GHSA-g3hv-75wg-m249">GHSA-g3hv-75wg-m249</a>. Once published versions of ESLint and <code>@eslint/config-array</code> both resolve to patched versions without the override, remove it, refresh the lockfile, and rerun <code>npm audit</code> and <code>npm run check</code>.</p>
 <h2 id="pull-requests">Pull Requests</h2>
 <ul><li>Keep pull requests focused on one fix or feature.</li><li>Add or update tests when behavior changes.</li><li>Update README or privacy documentation when user-facing behavior, storage, or network requests change.</li><li>Run <code>npm run check</code> before submitting.</li><li>Keep the pull request on a focused branch targeting protected <code>main</code>.</li><li>Do not commit secrets, local <code>.env</code> files, generated logs, or dependency folders.</li></ul>
 <h2 id="style">Style</h2>
