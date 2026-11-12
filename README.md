@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/tocatlian/fx2usd/actions/workflows/ci.yml/badge.svg)](https://github.com/tocatlian/fx2usd/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Node.js 20+](https://img.shields.io/badge/node.js-20%2B-339933.svg?logo=node.js&logoColor=white)](package.json)
+[![Node.js 22 and 24](https://img.shields.io/badge/node.js-22%20%7C%2024-339933.svg?logo=node.js&logoColor=white)](package.json)
 
 FX to USD Converter is a small, installable browser app for converting foreign currency amounts to US dollars. It fetches live exchange rates, keeps a local cache for offline fallback, supports manual rate overrides, and shows USD equivalents for common banknotes.
 
@@ -37,7 +37,8 @@ The offline app shell uses a service worker, so it is available when the app is 
 
 ## Requirements
 
-- Node.js 20 or newer for project scripts and tests.
+- Use the Node.js version pinned in [`.node-version`](.node-version) for local development. It follows the Node.js 24 LTS line used by GitHub Pages. With fnm, run `fnm install` and `fnm use` from the project directory.
+- The development tools require Node.js 22.22 or newer on the 22 line, or Node.js 24.8 or newer. CI checks the Node.js 22 and 24 lines.
 - A modern browser with `localStorage`, `fetch`, and `Intl` support.
 
 The browser app itself does not require Node.js after it is deployed.
