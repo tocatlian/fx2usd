@@ -24,6 +24,8 @@ npm run serve
 
 Local use does not require a build step; run `npm run build` when you need to inspect the deployment output. For scheduled local maintenance, see [docs/local-maintenance.md](docs/local-maintenance.md).
 
+The npm override for `minimatch` in ESLint's dependency tree addresses [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249). Once published versions of ESLint and `@eslint/config-array` both resolve to patched versions without the override, remove it, refresh the lockfile, and rerun `npm audit` and `npm run check`.
+
 ## Pull Requests
 
 - Keep pull requests focused on one fix or feature.
