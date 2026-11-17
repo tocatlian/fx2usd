@@ -6,6 +6,8 @@ This project follows the spirit of [Keep a Changelog](https://keepachangelog.com
 
 ## [Unreleased]
 
+- Added a centered “Need a Website? Kisau Sites.” footer link that opens Kisau Sites in a new tab.
+
 ## [0.1.2] - 2026-11-17
 
 - Added content hashes to production asset URLs in HTML, the PWA manifest, and the service-worker precache so returning browsers receive updated files under the canonical host's immutable cache policy.
