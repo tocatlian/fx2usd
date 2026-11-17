@@ -1092,7 +1092,7 @@ function registerServiceWorker() {
   }
 
   const register = () => {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+    navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});
   };
 
   if (document.readyState === "complete") {

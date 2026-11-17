@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) 2026 Paul Tocatlian
 
-const APP_VERSION = "0.1.1";
+const APP_VERSION = "0.1.2";
 const CACHE_NAME = `fx2usd-app-v${APP_VERSION}`;
 const STATIC_ASSETS = [
   "./",
