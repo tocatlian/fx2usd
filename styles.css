@@ -237,22 +237,28 @@ main {
 }
 
 .footer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 2vw, 16px);
+  align-items: start;
   margin-top: 28px;
-  text-align: center;
+  text-align: left;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
 .footer p {
   margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .footer .attribution {
-  margin-top: 6px;
+  text-align: center;
 }
 
 .footer .site-credit {
-  margin-top: 12px;
+  text-align: right;
 }
 
 .footer a {
@@ -514,6 +520,10 @@ button.ghost {
 @media (min-width: 720px) {
   .app {
     padding: 28px 20px 60px;
+  }
+
+  .footer {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   }
 
   .card {

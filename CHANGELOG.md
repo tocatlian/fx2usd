@@ -6,7 +6,9 @@ This project follows the spirit of [Keep a Changelog](https://keepachangelog.com
 
 ## [Unreleased]
 
-- Added a centered “Need a Website? Kisau Sites.” footer link that opens Kisau Sites in a new tab.
+- Aligned the footer in one row with copyright on the left, exchange-rate attribution centered, and Kisau Sites on the right, keeping matching typography and allowing text to wrap within its column on narrow screens.
+
+- Added a “Need a Website? Kisau Sites.” footer link that opens Kisau Sites in a new tab.
 
 ## [0.1.2] - 2026-11-17
 
