@@ -6,6 +6,8 @@ This project follows the spirit of [Keep a Changelog](https://keepachangelog.com
 
 ## [Unreleased]
 
+- Shortened the footer copyright notice by removing the release-license sentence.
+
 - Aligned the footer in one row with copyright on the left, exchange-rate attribution centered, and Kisau Sites on the right, keeping matching typography and allowing text to wrap within its column on narrow screens.
 
 - Added a “Need a Website? Kisau Sites.” footer link that opens Kisau Sites in a new tab.
