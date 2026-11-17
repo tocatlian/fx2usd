@@ -1,6 +1,6 @@
 {
   "name": "fx2usd",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A static browser app for converting foreign currency amounts to USD with live, cached, and manual exchange rates.",
   "private": true,
   "license": "MIT",

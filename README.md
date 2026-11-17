@@ -77,6 +77,8 @@ Build the static deployment output:
 npm run build
 ```
 
+The production build adds content hashes to asset URLs in HTML, the manifest, and the worker's precache. This lets browsers receive changed files when the host caches scripts, styles, and images for a year. PWA identity, scope, and start URL remain stable. Source files keep plain local references for development without a build step.
+
 The test suite uses Node's built-in test runner and a small fake DOM harness. The full check also runs formatting, JavaScript linting, CSS linting, HTML validation, project metadata validation, tests, and the static deployment build.
 
 For scheduled local maintenance tasks, see [docs/local-maintenance.md](docs/local-maintenance.md).

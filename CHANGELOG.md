@@ -6,6 +6,12 @@ This project follows the spirit of [Keep a Changelog](https://keepachangelog.com
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-17
+
+- Added content hashes to production asset URLs in HTML, the PWA manifest, and the service-worker precache so returning browsers receive updated files under the canonical host's immutable cache policy.
+- Kept the PWA identity stable and explicitly bypassed the HTTP cache for worker updates.
+- Added regression checks for script changes, icon-to-manifest dependency changes, and precache URL coherence.
+
 ## [0.1.1] - 2026-11-17
 
 - Added visible converter instructions covering live, cached, and manual rates.
