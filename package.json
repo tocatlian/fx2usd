@@ -1,6 +1,6 @@
 {
   "name": "fx2usd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A static browser app for converting foreign currency amounts to USD with live, cached, and manual exchange rates.",
   "private": true,
   "license": "MIT",
@@ -11,6 +11,8 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
+    "deploy:hostgator:plan": "node scripts/deploy-hostgator.js",
+    "deploy:hostgator": "node scripts/deploy-hostgator.js --apply",
     "check": "npm run format:check && npm run lint && npm run validate && npm test && npm run build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

@@ -8,7 +8,9 @@ FX to USD Converter is a small, installable browser app for converting foreign c
 
 The app is intentionally static: it has no backend or account requirement. Local use does not require a build step; `npm run build` prepares the deployment directory.
 
-Live demo: [tocatlian.github.io/fx2usd](https://tocatlian.github.io/fx2usd/)
+Canonical live app: [tocatlian.com/apps/fx](https://www.tocatlian.com/apps/fx/)
+
+GitHub Pages mirror: [tocatlian.github.io/fx2usd](https://tocatlian.github.io/fx2usd/). The mirror declares the canonical live app above and deploys independently of it.
 
 ![FX to USD Converter screenshot](docs/screenshot.jpg)
 
@@ -96,7 +98,11 @@ For scheduled local maintenance tasks, see [docs/local-maintenance.md](docs/loca
 
 ## Deployment
 
-This project includes a GitHub Pages workflow at `.github/workflows/pages.yml`. GitHub Actions runs `npm ci`, the quality gate, and `npm run build`, then deploys `dist/` whenever changes merge to `main`.
+This project includes a GitHub Pages workflow at `.github/workflows/pages.yml`. GitHub Actions runs `npm ci`, the quality gate, and `npm run build`, then deploys `dist/` to the GitHub Pages mirror whenever changes merge to `main`.
+
+The canonical app is served separately by Apache from the verified HostGator directory `public_html/tocatlian.com/apps/fx`. Copy `.env.hostgator.example` to the ignored `.env.hostgator`, configure the existing trusted SSH connection, then run `npm run deploy:hostgator:plan` to review the fixed target and `npm run deploy:hostgator` to validate, back up, upload, and verify the app. The uploader requires a clean committed checkout, preserves remote folders, and checks all ten runtime files over SFTP and HTTPS. Private backups, rollback batches, and release receipts remain under `.cache/hostgator-releases/`.
+
+The [November 17, 2026 search audit](docs/gsc-audit-2026-11-17.md) records how this production path was established. A successful GitHub Pages release alone must not be reported as a canonical-site deployment.
 
 See [PUBLISHING.md](PUBLISHING.md) for the repository settings and release checklist.
 
