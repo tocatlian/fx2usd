@@ -2,7 +2,9 @@
 
 This project has a local maintenance runner for checking the repository, validating safe local changes, committing them, and deploying only after a successful commit.
 
-Deployment is not enabled yet. The repository documents GitHub Pages deployment and a generic static-host build with `npm run build`, but it does not currently include a HostGator deployment command, SFTP configuration, or destination path. The launchd configuration therefore leaves `FX2USD_MAINTENANCE_DEPLOY_COMMAND` empty, and the runner refuses to make a real commit when changed files are present and deployment is required.
+Manual canonical deployment is available through `npm run deploy:hostgator`, using the private `.env.hostgator` connection and the verified directory `public_html/tocatlian.com/apps/fx`. See [PUBLISHING.md](../PUBLISHING.md). The [November 17, 2026 audit](gsc-audit-2026-11-17.md) established this destination by matching authenticated SFTP copies to the live canonical URL. GitHub Pages mirror deployment remains separate.
+
+Scheduled deployment is not enabled. The launchd configuration still leaves `FX2USD_MAINTENANCE_DEPLOY_COMMAND` empty, and the runner refuses to make a real commit when changed files are present and deployment is required. This audit did not authorize enabling or changing recurring automation.
 
 ## Files
 
@@ -41,9 +43,9 @@ The dry run logs the current branch, changed files, validation command, commit m
 
 ## Enable
 
-Do not enable until a HostGator deployment command and destination path are confirmed.
+Do not enable unless the user separately authorizes the recurring automation. The manual HostGator deployment command and destination have been verified, but the schedule remains disabled.
 
-After confirmation, edit `ops/launchd/com.paultocatlian.fx2usd.local-maintenance.plist` and set `FX2USD_MAINTENANCE_DEPLOY_COMMAND` to the existing safe deployment command. Do not put passwords, tokens, private keys, or other secrets in the plist.
+After separate authorization, review lock ownership and checkout behavior before wiring the manual uploader into the maintenance runner. The uploader currently refuses the runner's active maintenance lock, so assigning the command alone is insufficient. Do not put passwords, tokens, private keys, or other secrets in the plist.
 
 Then install and enable:
 

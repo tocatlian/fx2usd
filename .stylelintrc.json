@@ -1,6 +1,6 @@
 {
   "extends": ["stylelint-config-standard"],
-  "ignoreFiles": ["build/**", "coverage/**", "dist/**", "node_modules/**"],
+  "ignoreFiles": [".cache/**", "build/**", "coverage/**", "dist/**", "node_modules/**"],
   "rules": {
     "alpha-value-notation": null,
     "color-function-alias-notation": null,

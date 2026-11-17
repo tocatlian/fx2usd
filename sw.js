@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) 2026 Paul Tocatlian
 
-const APP_VERSION = "0.1.0";
+const APP_VERSION = "0.1.1";
 const CACHE_NAME = `fx2usd-app-v${APP_VERSION}`;
 const STATIC_ASSETS = [
   "./",
@@ -30,7 +30,9 @@ self.addEventListener("activate", (event) => {
       .keys()
       .then((cacheNames) =>
         Promise.all(
-          cacheNames.filter((name) => name !== CACHE_NAME).map((name) => caches.delete(name)),
+          cacheNames
+            .filter((name) => name.startsWith("fx2usd-app-v") && name !== CACHE_NAME)
+            .map((name) => caches.delete(name)),
         ),
       )
       .then(() => self.clients.claim()),

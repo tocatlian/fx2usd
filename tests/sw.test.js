@@ -180,15 +180,16 @@ test("install precaches the app shell and activates immediately", async () => {
   assert.deepEqual(cachedPaths, [...EXPECTED_STATIC_ASSETS].sort());
 });
 
-test("activate deletes old app caches and claims clients", async () => {
+test("activate deletes old app caches, preserves sibling app caches and claims clients", async () => {
   const runtime = createServiceWorkerRuntime();
   await (await runtime.caches.open("fx2usd-app-v0.0.0")).addAll(["app.js"]);
+  await (await runtime.caches.open("monaco-app-v1")).addAll(["game.js"]);
   await runtime.dispatchExtendableEvent("install");
 
   await runtime.dispatchExtendableEvent("activate");
 
   assert.equal(runtime.lifecycle.claimed, true);
-  assert.deepEqual(await runtime.caches.keys(), [EXPECTED_CACHE_NAME]);
+  assert.deepEqual(await runtime.caches.keys(), ["monaco-app-v1", EXPECTED_CACHE_NAME]);
 });
 
 test("fetch ignores non-GET and cross-origin requests", async () => {
