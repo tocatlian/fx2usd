@@ -266,6 +266,63 @@ main {
   text-decoration: none;
   border-bottom: 1px solid rgba(107, 101, 93, 0.4);
 }
+@media (max-width: 639px) {
+  .footer {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    justify-items: center;
+    padding-block: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .footer p {
+    text-align: center;
+    overflow-wrap: normal;
+  }
+
+  .footer > p:first-child {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .footer .site-credit {
+    order: 1;
+    text-align: center;
+  }
+
+  .footer .site-credit a {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 44px;
+    border-bottom: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .footer .attribution {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 4px;
+  }
+
+  .footer .attribution a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    border-bottom: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
 .card {
   background: var(--card);
   border-radius: var(--radius);

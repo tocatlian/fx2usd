@@ -6,6 +6,9 @@ This project follows the spirit of [Keep a Changelog](https://keepachangelog.com
 
 ## [Unreleased]
 
+- Centered the mobile footer below 640 pixels, placing Kisau Sites close beneath the copyright and
+  preserving the exchange-rate attribution on a separate centered line with 44-pixel link targets.
+
 - Removed the remaining Picomatch implementation bundled in Prettier by retaining only its official standalone formatter and required parser plugins. Added literal file traversal, restricted configuration, artifact hashes and dependency bundle regression checks. Application runtime files are unchanged.
 
 - Shortened the footer copyright notice by removing the release-license sentence.

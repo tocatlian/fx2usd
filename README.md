@@ -83,6 +83,14 @@ The test suite uses Node's built-in test runner and a small fake DOM harness. Th
 
 For scheduled local maintenance tasks, see [docs/local-maintenance.md](docs/local-maintenance.md).
 
+### Mobile footer
+
+Below 640 CSS pixels, the footer uses a centered single column with copyright first, the complete
+“Need a Website? Kisau Sites.” link closely below, and the ExchangeRate-API attribution on its own
+centered line. The copyright and Kisau text form a compact block centered within equal vertical
+padding. Links retain at least 44-pixel tap areas, and enlarged text may wrap naturally. At wider
+widths, copyright remains left aligned, rate attribution centered, and Kisau Sites right aligned.
+
 ## Project Structure
 
 ```text
