@@ -6,6 +6,8 @@ This project follows the spirit of [Keep a Changelog](https://keepachangelog.com
 
 ## [Unreleased]
 
+- Removed the remaining Picomatch implementation bundled in Prettier by retaining only its official standalone formatter and required parser plugins. Added literal file traversal, restricted configuration, artifact hashes and dependency bundle regression checks. Application runtime files are unchanged.
+
 - Shortened the footer copyright notice by removing the release-license sentence.
 
 - Aligned the footer in one row with copyright on the left, exchange-rate attribution centered, and Kisau Sites on the right, keeping matching typography and allowing text to wrap within its column on narrow screens.

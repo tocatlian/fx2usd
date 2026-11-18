@@ -1,0 +1,17 @@
+{
+  "name": "prettier",
+  "version": "3.10.0",
+  "source": "https://registry.npmjs.org/prettier/-/prettier-3.10.0.tgz",
+  "integrity": "sha512-mBi4765LgjO1PFjlEs7pUeK0nb1bw71c+N4/ItfeUWNdY5cV2pRKaFpbbFRYmDJMO+5ZwzGxHRqHxFZna7iv5w==",
+  "files": {
+    "standalone.mjs": "2cff5e1e77bc32c7192754f280fd4b76f3c7dcc588bbe796a12617d91bc03295",
+    "plugins/babel.mjs": "d82a23d0b9107c6d18325c0a00bf3c31688dd99683496cd49d919c8bebb795f7",
+    "plugins/estree.mjs": "312e5ed5503dfa31efd644a00d053acd97dae1305a94c9a443ba98023775af56",
+    "plugins/postcss.mjs": "d041ddaacba63eaade8520a799d19a2fdef2d90491c37bb3dfa5f03c256aeb87",
+    "plugins/html.mjs": "c2007a16f0f53b11b676ffcfc097e83a2075cc12ec9dafb131a5625a1d35b60f",
+    "plugins/markdown.mjs": "f48944f815c9de6925b3b97619cfb42f7684ade5ca176baf701e1e0078f4ad49",
+    "plugins/yaml.mjs": "31526ebee8b6be054ae3995b6b21a3e17610dfd3ffacf463c63657593d63702e",
+    "LICENSE": "b0f2417199889f1c0d28ec4e0244eacf1a15de5819d61f641dd7d8f45153ac9c",
+    "THIRD-PARTY-NOTICES": "1adf328f64b26383979c603da48518620b766bd0c2044b7628640eb7d6b96bdc"
+  }
+}
