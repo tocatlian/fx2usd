@@ -1,4 +1,5 @@
 * text=auto eol=lf
+vendor/prettier/** -text
 
 *.png binary
 *.jpg binary

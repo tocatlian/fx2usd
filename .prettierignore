@@ -4,5 +4,6 @@ coverage/
 dist/
 docs/html/
 node_modules/
+vendor/
 *.png
 *.plist

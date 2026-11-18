@@ -34,7 +34,7 @@ const serviceWorkerGlobals = {
 
 module.exports = [
   {
-    ignores: [".cache/**", "build/**", "coverage/**", "dist/**", "node_modules/**"],
+    ignores: [".cache/**", "build/**", "coverage/**", "dist/**", "node_modules/**", "vendor/**"],
   },
   { ...js.configs.recommended, files: ["**/*.{js,mjs}"] },
   {

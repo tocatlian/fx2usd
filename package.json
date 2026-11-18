@@ -13,9 +13,9 @@
     "build": "node scripts/build.js",
     "deploy:hostgator:plan": "node scripts/deploy-hostgator.js",
     "deploy:hostgator": "node scripts/deploy-hostgator.js --apply",
-    "check": "npm run format:check && npm run lint && npm run validate && npm test && npm run build",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "check": "npm run security:dependencies && npm run format:check && npm run lint && npm run validate && npm test && npm run build",
+    "format": "node scripts/format.mjs --write",
+    "format:check": "node scripts/format.mjs --check",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:css": "eslint \"**/*.css\"",
     "lint:html": "html-validate index.html",
@@ -30,7 +30,8 @@
     "docs:html:watch": "node scripts/render-doc-html.mjs --portal --watch",
     "docs:html:check": "node scripts/render-doc-html.mjs --portal --check",
     "docs:build": "npm run docs:html",
-    "docs:watch": "npm run docs:html:watch"
+    "docs:watch": "npm run docs:html:watch",
+    "security:dependencies": "node scripts/check-dependency-bundles.js"
   },
   "keywords": [
     "currency",
@@ -44,8 +45,7 @@
     "@eslint/css": "^2.0.1",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.5.0",
-    "html-validate": "^11.5.3",
-    "prettier": "^3.8.4"
+    "html-validate": "^11.5.3"
   },
   "overrides": {
     "eslint": {
