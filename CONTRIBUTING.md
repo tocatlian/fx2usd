@@ -26,6 +26,14 @@ Local use does not require a build step; run `npm run build` when you need to in
 
 The npm override for `minimatch` in ESLint's dependency tree addresses [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249). Once published versions of ESLint and `@eslint/config-array` both resolve to patched versions without the override, remove it, refresh the lockfile, and rerun `npm audit` and `npm run check`.
 
+### CSS linting
+
+CSS is checked by the official [`@eslint/css` plugin](https://github.com/eslint/css) using its recommended rules in `eslint.config.js`. `npm run lint:css` checks CSS, and `npm run lint:js` checks JavaScript. Generated output, dependencies and private audit evidence remain ignored. Prettier remains the formatting check.
+
+This replaces Stylelint and its glob dependencies after the November 17, 2026 review of [GHSA-fc5q-39xc-vjpf](https://github.com/advisories/GHSA-fc5q-39xc-vjpf). Seven high-severity package alerts shared the vulnerable Picomatch implementation. No patched Picomatch release was available, and Stylelint 18 still depended on it. The migration removes that dependency chain without a custom glob adapter or patched fork. Runtime app files are unaffected.
+
+The CSS rule sets are different. ESLint checks syntax, properties, at-rules, grid areas, font fallbacks, empty blocks, duplicate imports and keyframe selectors, impossible selectors, important declarations and Baseline compatibility. It does not preserve every Stylelint convention, including duplicate declaration detection and naming patterns. The existing `::marker` enhancement is allowed by the Baseline rule because summary elements also have `list-style` and WebKit marker fallbacks. Other Baseline checks remain enabled. `tests/css-lint.test.js` verifies representative error detection, the real stylesheet, JavaScript rule isolation and ignored paths. Revisit this coverage deliberately when changing lint tooling.
+
 ## Pull Requests
 
 - Keep pull requests focused on one fix or feature.

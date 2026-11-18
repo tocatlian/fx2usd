@@ -1,6 +1,7 @@
 "use strict";
 
 const js = require("@eslint/js");
+const css = require("@eslint/css").default;
 
 const browserGlobals = {
   AbortController: "readonly",
@@ -35,7 +36,17 @@ module.exports = [
   {
     ignores: [".cache/**", "build/**", "coverage/**", "dist/**", "node_modules/**"],
   },
-  js.configs.recommended,
+  { ...js.configs.recommended, files: ["**/*.{js,mjs}"] },
+  {
+    ...css.configs.recommended,
+    files: ["**/*.css"],
+    language: "css/css",
+    rules: {
+      ...css.configs.recommended.rules,
+      // Existing summary markers have list-style and WebKit fallbacks.
+      "css/use-baseline": ["error", { allowSelectors: ["marker"] }],
+    },
+  },
   {
     files: ["**/*.{js,mjs}"],
     languageOptions: {

@@ -17,9 +17,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
-    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css": "eslint \"**/*.css\"",
     "lint:html": "html-validate index.html",
-    "lint:js": "eslint .",
+    "lint:js": "eslint \"**/*.{js,mjs}\"",
     "maintenance:dry-run": "node scripts/local-maintenance.js --dry-run",
     "maintenance:run": "node scripts/local-maintenance.js --run",
     "serve": "node scripts/serve.js",
@@ -41,12 +41,11 @@
     "usd"
   ],
   "devDependencies": {
+    "@eslint/css": "^2.0.1",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.5.0",
     "html-validate": "^11.5.3",
-    "prettier": "^3.8.4",
-    "stylelint": "^17.13.0",
-    "stylelint-config-standard": "^40.0.0"
+    "prettier": "^3.8.4"
   },
   "overrides": {
     "eslint": {
