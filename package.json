@@ -45,7 +45,7 @@
     "@eslint/css": "^2.0.1",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.5.0",
-    "html-validate": "^11.5.3"
+    "html-validate": "^11.21.1"
   },
   "overrides": {
     "eslint": {
